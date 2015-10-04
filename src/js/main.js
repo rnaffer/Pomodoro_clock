@@ -13,4 +13,4 @@ window.randomize = function() {
 		$('.circle .fill.fix').css(transform_styles[i],
                              'rotate(' + fix_rotation + 'deg)');
 	}
-}                    
+}

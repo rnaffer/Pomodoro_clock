@@ -1,14 +1,54 @@
+html, body {
+	display: block;
+	height: 100%;
+}
+
+body {
+	background : #E0594C;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	min-width: 415px;
+}
+
+header {
+	text-align: center;
+}
+
+.container {
+	height: inherit;
+	background-color: #ED6B5F;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	min-height: 770px;
+}
+
+h1 {
+	font-family: 'Lobster', cursive;
+	font-size: 5em;
+	color: #fff;
+	margin: 0.4em 0 0.2em 0;
+}
+
+.stem {
+	width: 53px;
+	height: 58px;
+	position: relative;
+	left: 50%;
+	background: url("http://s6.postimg.org/gxh1mwbp9/green.png") no-repeat;
+}
+
 .radial-progress {
-	@circle-size: 470px;
-	@circle-background: #d6dadc;
-	@circle-color: #97a71d;
+	@circle-size: 420px;
+	@circle-background: #E0594C;
+	@circle-color: #fff;
 	@transition-length: 1s;
-	@inset-size: 450px;
-	@inset-color: #fbfbfb;
+	@inset-size: 400px;
+	@inset-color: #ED6B5F;
+	@play-stop-size: 50px;
 
 	width:  @circle-size;
 	height: @circle-size;
-	margin: 20px;
+	margin: 0 auto;
+	margin-bottom: 2.1em;
 
 	background-color: @circle-background;
 	border-radius: 50%;
@@ -46,11 +86,202 @@
 		margin-top: (@circle-size - @inset-size)/2;
 		background-color: @inset-color;
 		border-radius: 50%;
+		text-align: center;
 
 		h2 {
-			text-align: center;
-			margin-top: 45%;
+			margin-top: 36%;
 			position: relative;
+			font-size: 6.5em;
+			margin-left: 0.2em;
+			margin-bottom: 0.4em;
 		}
+
+		.play-stop {
+			cursor: pointer;
+			width: @play-stop-size;
+			height: @play-stop-size;
+			border-radius: 50%;
+			background-color: #fff;
+			color: #CBE867;
+			display: block;
+			margin: 0 auto;
+			position: relative;
+
+			span {
+				font-size: 1.5em;
+				position: relative;
+				top: 26%;
+				margin-left: 0.2em;
+			}
+		}
+	}
+}
+
+.timer {
+	text-align: center;
+	padding: 0;
+	margin-left: 24%;
+	height: 3.8em;
+	background : #FFFFFF;
+	background : rgba(255, 255, 255, 1);
+	border-style : Solid;
+	border-color : #E0594C;
+	border-color : rgba(224, 89, 76, 1);
+	color: #E0594C;
+	border-width : 2px;
+	border-radius : 8px;
+	-moz-border-radius : 8px;
+	-webkit-border-radius : 8px;
+
+	&::after {
+  		display: block;
+  		content: "Working Time";
+  		font-size: 1.35em;
+  		color: #fff;
+  		margin-top: 0.5em;
+  	}
+
+	&:last-child {
+		border-color : #B3CC57;
+  		border-color : rgba(179, 204, 87, 1);
+  		color: #B3CC57;
+
+  		&::after {
+  			content: "Break Time";
+  		}
+  	}
+
+  	h3 {
+  		font-size: 2.5em;
+  		margin: 0;
+  		line-height: 1.4;
+  		display: inline-block;
+  	}
+
+  	span {
+  		display: block;
+		position: relative;
+		font-size: 1.2em;
+		padding: 1em 0.8em;
+		cursor: pointer;
+
+		&::hover {
+		}
+  	}
+}
+
+footer {
+	text-align: center;
+	position: relative;
+	margin-top: 5em;
+
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+}
+
+
+@media screen and (min-width: 970px) {
+	.timer {
+
+		&:last-child {
+			margin-left: 2em;			
+		}
+	}	
+}
+
+@media screen and (max-width: 1200px) {
+	body {
+		font-size: 13px;		
+	}
+
+	.radial-progress {
+		@circle-size: 380px;
+		@inset-size: 360px;
+		@play-stop-size: 50px;
+
+		width:  @circle-size;
+		height: @circle-size;
+
+		.circle {
+
+			.mask, .fill {
+				width:    @circle-size;
+				height:   @circle-size;
+			}
+
+			.mask {
+				clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
+
+				.fill {
+					clip: rect(0px, @circle-size/2, @circle-size, 0px);
+				}
+			}
+		}
+
+		.inset {
+			width: @inset-size;
+			height: @inset-size;
+			margin-left: (@circle-size - @inset-size)/2;
+			margin-top: (@circle-size - @inset-size)/2;
+
+			.play-stop {
+				width: @play-stop-size;
+				height: @play-stop-size;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 970px) {
+	
+	body {
+		font-size: 12px;
+	}
+
+	.radial-progress {
+		@circle-size: 320px;
+		@inset-size: 300px;
+		@play-stop-size: 40px;
+
+		width:  @circle-size;
+		height: @circle-size;
+
+		.circle {
+
+			.mask, .fill {
+				width:    @circle-size;
+				height:   @circle-size;
+			}
+
+			.mask {
+				clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
+
+				.fill {
+					clip: rect(0px, @circle-size/2, @circle-size, 0px);
+				}
+			}
+		}
+
+		.inset {
+			width: @inset-size;
+			height: @inset-size;
+			margin-left: (@circle-size - @inset-size)/2;
+			margin-top: (@circle-size - @inset-size)/2;
+
+			.play-stop {
+				width: @play-stop-size;
+				height: @play-stop-size;
+			}
+		}
+	}
+
+	.col-sm-offset-1 {
+	    margin-left: 8.33333%;
+	}
+
+	.col-sm-offset-2 {
+	    margin-left: 16.6667%;
 	}
 }
