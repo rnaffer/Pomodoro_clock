@@ -1,0 +1,25 @@
+{
+  "name": "pomodoro_clock",
+  "version": "1.0.0",
+  "description": "pomodoro clock",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rnaffer/Pomodoro_clock.git"
+  },
+  "author": "Naffer Reyes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rnaffer/Pomodoro_clock/issues"
+  },
+  "homepage": "https://github.com/rnaffer/Pomodoro_clock#readme",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

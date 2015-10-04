@@ -1,0 +1,56 @@
+.radial-progress {
+	@circle-size: 470px;
+	@circle-background: #d6dadc;
+	@circle-color: #97a71d;
+	@transition-length: 1s;
+	@inset-size: 450px;
+	@inset-color: #fbfbfb;
+
+	width:  @circle-size;
+	height: @circle-size;
+	margin: 20px;
+
+	background-color: @circle-background;
+	border-radius: 50%;
+
+	.circle {
+
+		.mask, .fill {
+			width:    @circle-size;
+			height:   @circle-size;
+			position: absolute;
+
+			border-radius: 50%;
+
+			transition: -webkit-transform @transition-length;
+			transition: -ms-transform @transition-length;
+			transition: transform @transition-length;
+			-webkit-backface-visibility: hidden;
+		}
+
+		.mask {
+			clip: rect(0px, @circle-size, @circle-size, @circle-size/2);
+
+			.fill {
+				clip: rect(0px, @circle-size/2, @circle-size, 0px);
+				background-color: @circle-color;
+			}
+		}
+	}
+
+	.inset {
+		width: @inset-size;
+		height: @inset-size;
+		position: absolute;
+		margin-left: (@circle-size - @inset-size)/2;
+		margin-top: (@circle-size - @inset-size)/2;
+		background-color: @inset-color;
+		border-radius: 50%;
+
+		h2 {
+			text-align: center;
+			margin-top: 45%;
+			position: relative;
+		}
+	}
+}

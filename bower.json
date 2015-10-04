@@ -1,0 +1,13 @@
+{
+  "name": "Pomodoro_clock",
+  "version": "0.0.0",
+  "homepage": "https://github.com/rnaffer/Pomodoro_clock",
+  "authors": [
+    "RNaffer <reyesnaffer@gmail.com>"
+  ],
+  "description": "pomodoro clock",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
