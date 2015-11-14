@@ -34,12 +34,17 @@
         rotationBase : 0,
         rotationAnimation : 0,
 
-		// 
+        // Sound
+        sound : {},
+
+		// Validators
 		isWorking : false,
 		isInBreak : false,
 
 		prepare : function() {
 			var self = this;
+
+			this.sound = new Audio('http://www.orangefreesounds.com/wp-content/uploads/2015/04/Desk-bell-sound.mp3');
 
 			this.$workingPlus.on("click", function() {
 				self.workingTime += 1;
@@ -120,6 +125,8 @@
 				if (self.timeCounter == limit || self.minutes < 0) {
 
 					self.stopTimer();
+					
+					self.sound.play();
 
 					if (self.isWorking) {
 						self.isWorking = false;
